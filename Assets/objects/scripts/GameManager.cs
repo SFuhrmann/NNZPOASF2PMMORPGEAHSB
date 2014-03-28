@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	private bool attackedColleague = false;
 	private bool answeredPhoneCall = false;
 	private bool fixedBug = false;
+    private bool openedBreadPack = false;
 
 	internal static GameManager instance;
 
@@ -77,4 +78,8 @@ public class GameManager : MonoBehaviour {
 		fixedBug = true;
 	}
 
+    public void setOpenedBreadPackDone()
+    {
+        openedBreadPack = true;
+    }
 }

@@ -13,8 +13,9 @@ public class _ObjBreadPackController : ObjController {
 	
 	}
 
+    //
     void OnSwipeUp()
     {
-
+        GameManager.instance.setOpenedBreadPackDone();
     }
 }

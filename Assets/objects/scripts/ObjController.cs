@@ -24,6 +24,8 @@ public class ObjController : MonoBehaviour {
 
     void OnMouseUp()
     {
+        //read current mouse position and check if swipe was performed
+        //call according function
         Vector3 newMousePosition = Input.mousePosition;
         if (newMousePosition.y - deadSpace > mouseDownPosition.y)
         {
@@ -52,5 +54,9 @@ public class ObjController : MonoBehaviour {
     protected virtual void OnSwipeRight() { }
     protected virtual void OnSwipeDown() { }
     protected virtual void OnSwipeLeft() { }
-    protected virtual void OnClicked() { }
+
+    //called when no swipe is detected
+    void OnClicked() {
+        ToolTipController.setToolTip(toolTipMessage);
+    }
 }
