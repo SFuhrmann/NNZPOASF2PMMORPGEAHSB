@@ -8,7 +8,7 @@ public class ToolTipController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		instance = this;
 	}
 	
 	// Update is called once per frame
@@ -17,6 +17,6 @@ public class ToolTipController : MonoBehaviour {
 	}
 
 	public void setToolTip(string toolTip) {
-		instance.instanceToolTip = toolTip;
+		instanceToolTip = toolTip;
 	}
 }

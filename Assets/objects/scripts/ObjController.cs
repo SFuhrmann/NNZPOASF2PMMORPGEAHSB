@@ -57,6 +57,6 @@ public class ObjController : MonoBehaviour {
 
     //called when no swipe is detected
     void OnClicked() {
-        ToolTipController.setToolTip(toolTipMessage);
+        ToolTipController.instance.setToolTip(toolTipMessage);
     }
 }
