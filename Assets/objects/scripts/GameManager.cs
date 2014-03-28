@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 	public void setDeletedDesktopNinjaDone() {
 		if (unhideDesktopNinja) {
 			deletedDesktopNinja = true;
-			//TODO: checklist.checkDas
+			checklist.checkListItem(ChecklistController.NINJA_QUEST);
 		} else {
 			Debug.Log ("You have to unhide the desktop ninja first");
 		}
