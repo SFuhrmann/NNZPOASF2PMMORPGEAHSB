@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _ObjBreadPackController : MonoBehaviour {
-
-    private Vector3 mouseDownPosition;
+public class _ObjBreadPackController : ObjController {
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +13,7 @@ public class _ObjBreadPackController : MonoBehaviour {
 	
 	}
 
-    void OnMouseDown()
+    void OnSwipeUp()
     {
 
     }

@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ObjController : MonoBehaviour {
 
-    private Vector3 mouseDownPosition;
+    protected Vector3 mouseDownPosition;
     public string toolTipMessage;
-    private float deadSpace = 0.19f;
+    protected float deadSpace = 0.19f;
 
 	// Use this for initialization
 	void Start () {
@@ -48,9 +48,9 @@ public class ObjController : MonoBehaviour {
 
     }
 
-    virtual void OnSwipeUp();
-    virtual void OnSwipeRight();
-    virtual void OnSwipeDown();
-    virtual void OnSwipeLeft();
-    virtual void OnClicked();
+    protected virtual void OnSwipeUp() { }
+    protected virtual void OnSwipeRight() { }
+    protected virtual void OnSwipeDown() { }
+    protected virtual void OnSwipeLeft() { }
+    protected virtual void OnClicked() { }
 }
