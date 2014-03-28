@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
      <Compile Include="Assets\objects\scripts\GameManager.cs" />
+     <Compile Include="Assets\objects\scripts\ObjController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjBreadPackController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjClockController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjCoffeeCupController.cs" />
