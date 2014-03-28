@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _ObjPenController : MonoBehaviour {
+public class _ObjPenController : ObjController {
 
-	// Use this for initialization
 	void Start () {
-	
+		toolTipMessage = "Das ist dein Stift";
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnSwipeRight ()
+	{
+		Debug.Log ("swipe right");
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CoffeeCupController : MonoBehaviour {
+public class _ObjCoffeeCupController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

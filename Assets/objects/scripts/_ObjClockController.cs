@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClockController : MonoBehaviour {
+public class _ObjClockController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
