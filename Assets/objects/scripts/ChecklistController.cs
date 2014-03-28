@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ChecklistController : MonoBehaviour {
 
+    public GameObject[] listCheckMarks;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +14,10 @@ public class ChecklistController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void checkListItem(int number)
+    {
+        listCheckMarks[number].GetComponent<SpriteRenderer>().enabled = true;
+        //listCheckMarks[number].GetComponent<Animator>().SetTrigger("Checked");
+    }
 }
