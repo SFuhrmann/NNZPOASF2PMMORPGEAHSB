@@ -29,5 +29,9 @@ public class _ObjPaperController : ObjController {
                 Destroy(col.gameObject);
             }
         }
+        if (col.CompareTag("Enemy"))
+        {
+            GameManager.instance.setThrownPaperDone();
+        }
 	}
 }

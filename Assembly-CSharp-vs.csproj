@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\objects\scripts\BananaSausage.cs" />
      <Compile Include="Assets\objects\scripts\CameraScript.cs" />
      <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
      <Compile Include="Assets\objects\scripts\GameManager.cs" />
@@ -53,7 +54,9 @@
      <Compile Include="Assets\objects\scripts\QuestLogNearControl.cs" />
      <Compile Include="Assets\objects\scripts\ToolTipController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjBreadPackController.cs" />
+     <Compile Include="Assets\objects\scripts\_ObjChocolate.cs" />
      <Compile Include="Assets\objects\scripts\_ObjCoffeeCupController.cs" />
+     <Compile Include="Assets\objects\scripts\_ObjLaptopEnemyController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjLaptopScreenController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjNinjaController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjNotebookController.cs" />

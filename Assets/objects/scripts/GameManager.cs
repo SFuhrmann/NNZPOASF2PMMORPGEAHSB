@@ -17,17 +17,47 @@ public class GameManager : MonoBehaviour {
 	private bool fixedBug = false;
     private bool openedBreadPack = false;
     private bool cleanedCoffeeStain = false;
+    private bool duelStarted = false;
+    private bool thrownPaper = false;
+    private bool thrownBananaSausage = false;
+    private bool pvpWon = false;
+    private float duelResetTimer;
+    public float duelResetTime = 15;
 
 	internal static GameManager instance;
 
 	public ChecklistController checklist;
 
-	void Start () {
-		instance = this;
-	}
+    void Start()
+    {
+        instance = this;
+    }
+
+    void Update()
+    {
+        if (duelResetTimer > 0)
+        {
+            duelResetTimer -= Time.deltaTime;
+        }
+        else
+        {
+            duelResetTimer = 0;
+            duelStarted = false;
+        }
+    }
+
+    void CheckAllBools()
+    {
+        if (drunkCoffee && deletedDesktopNinja && unhideDesktopNinja && trashedPencil && eatenChocolateBar &&
+            openedLunchPack && paintedGirlfriendPhoto && trashedOrc && /*answeredPhoneCall && */ fixedBug && openedBreadPack &&
+            cleanedCoffeeStain && duelStarted && thrownPaper && thrownBananaSausage && pvpWon)
+            Win();
+    }
+
 
 	public void setDrunkCoffeeDone() {
 		drunkCoffee = true;
+        CheckAllBools();
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
@@ -98,5 +128,27 @@ public class GameManager : MonoBehaviour {
     public void setCleanedCoffeeStainDone()
     {
         cleanedCoffeeStain = true;
+    }
+
+    public void setDuelStarted()
+    {
+        duelStarted = true;
+    }
+
+    public void setThrownPaperDone()
+    {
+        if (duelStarted && drunkCoffee && trashedOrc)
+            thrownPaper = true;
+    }
+
+    public void setThrownBananaSausageDone()
+    {
+        if (duelStarted && thrownPaper)
+            thrownBananaSausage = true;
+    }
+
+    void Win()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

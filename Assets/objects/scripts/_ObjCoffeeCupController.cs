@@ -5,6 +5,7 @@ public class _ObjCoffeeCupController : ObjController {
 
     public GameObject stain;
     public GameObject paper;
+    public Sprite empty;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class _ObjCoffeeCupController : ObjController {
         if (col.CompareTag("Self"))
         {
             GameManager.instance.setDrunkCoffeeDone();
+            GetComponent<SpriteRenderer>().sprite = empty;
             stain.SetActive(true);
             paper.SetActive(true);
         }
