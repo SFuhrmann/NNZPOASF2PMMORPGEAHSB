@@ -8,6 +8,7 @@ public class epicCameraZoom : MonoBehaviour {
 	private bool ready;
     public GameObject musicLoop;
     public GameObject wimpyLoop;
+    public Animator bushes;
 
 	private float runningTime;
 	// Use this for initialization
@@ -33,6 +34,8 @@ public class epicCameraZoom : MonoBehaviour {
 		int index = (int)((runningTime) / 0.7f);
 		if (index < logoObjects.Length) {
 				logoObjects [index].SetActive (true);
+            if (index == 7)
+                bushes.SetTrigger("bushes");
 		} else {
 				ready = true;
                 musicLoop.GetComponent<AudioSource>().Play();
