@@ -6,6 +6,7 @@ public class _ObjBreadPackController : ObjController {
     private bool openPack;
     public GameObject chocolate;
     public GameObject bananaSausage;
+	public Sprite openSprite;
 	public AudioSource openBox;
 
 	// Use this for initialization
@@ -25,6 +26,7 @@ public class _ObjBreadPackController : ObjController {
         {
 			openBox.Play ();
             openPack = true;
+			this.GetComponent<SpriteRenderer>().sprite = openSprite;
 			ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
             chocolate.SetActive(true);
             bananaSausage.SetActive(true);
