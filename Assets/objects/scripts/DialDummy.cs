@@ -22,5 +22,6 @@ public class DialDummy : MonoBehaviour {
     {
         phone.phoneSprite.sprite = phone.pressedDownSprites[number];
         phone.addNewNumber(number);
+        GetComponent<AudioSource>().Play();
     }
 }
