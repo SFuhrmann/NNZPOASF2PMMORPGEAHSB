@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ColliderStartController.cs" />
      <Compile Include="Assets\objects\scripts\BananaSausage.cs" />
      <Compile Include="Assets\objects\scripts\CameraScript.cs" />
      <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\objects\scripts\_ObjPhoneController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjPictureofGirlfriendController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjStainController.cs" />
+     <Compile Include="Assets\startScene\epicCameraZoom.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
