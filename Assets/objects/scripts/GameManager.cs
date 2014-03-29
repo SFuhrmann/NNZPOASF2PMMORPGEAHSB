@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    public GameObject ninjaProgramm;
+
 	public bool drunkCoffee = false;
 	public bool deletedDesktopNinja = false;
 	public bool unhideDesktopNinja = false;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour {
 		drunkCoffee = true;
         healZombie = true;
         checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
+        ToolTipController.instance.setToolTip("WACH!!!");
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
@@ -68,13 +71,19 @@ public class GameManager : MonoBehaviour {
 			deletedDesktopNinja = true;
             Destroy(ninja);
 			checklist.checkListItem(ChecklistController.NINJA_QUEST);
+            ToolTipController.instance.setToolTip("Weg ist er");
 		} else {
 
 		}
 	}
 
 	public void setUnhideDesktopNinjaDone() {
-		unhideDesktopNinja = true;
+        if (!unhideDesktopNinja)
+        {
+            unhideDesktopNinja = true;
+            ToolTipController.instance.setToolTip("Oh ein Ninja");
+            ninjaProgramm.SetActive(true);
+        }
 	}
 
 	public void setTrashedPencilDone(GameObject pen) {
@@ -85,6 +94,7 @@ public class GameManager : MonoBehaviour {
             killNazi = true;
             checklist.checkListItem(ChecklistController.NAZI_QUEST);
             trashedPencil = true;
+            ToolTipController.instance.setToolTip("Weg damit");
         }
         else
         {
@@ -96,6 +106,7 @@ public class GameManager : MonoBehaviour {
 		eatenChocolateBar = true;
         checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
+        ToolTipController.instance.setToolTip("Das war lecker");
 	}
 
 	public void setOpenedLunchPackDone() {
@@ -107,6 +118,7 @@ public class GameManager : MonoBehaviour {
         paintedGirlfriendPhoto = true;
         checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
         lookAtBreasts = true;
+        ToolTipController.instance.setToolTip("So ist es schöner");
 	}
 
 	public void setSentMailDone() {
@@ -116,16 +128,20 @@ public class GameManager : MonoBehaviour {
 	public bool setTrashedOrcDone() {
         if (cleanedCoffeeStain)
         {
+            ToolTipController.instance.setToolTip("Ihh Popel mit Kaffeematsch");
             trashedOrc = true;
             checklist.checkListItem(ChecklistController.ORC_QUEST);
             huntOrc = true;
             return true;
         }
+        else
+            ToolTipController.instance.setToolTip("Das ist zu trocken um den Popel vom Tisch zu kratzen");
         return false;
 	}
 
 	public void setAttackedColleagueDone() {
 		attackedColleague = true;
+        ToolTipController.instance.setToolTip("Er wirft nach mir - Ich brauche Waffen");
 	}
 
 	public void setAnsweredPhoneCallDone() {
@@ -139,11 +155,13 @@ public class GameManager : MonoBehaviour {
     public void setOpenedBreadPackDone()
     {
         openedBreadPack = true;
+        ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
     }
 
     public void setCleanedCoffeeStainDone()
     {
         cleanedCoffeeStain = true;
+        ToolTipController.instance.setToolTip("Jetzt ist es mit Kaffee vollgesogen");
     }
 
     public void setDuelStarted()

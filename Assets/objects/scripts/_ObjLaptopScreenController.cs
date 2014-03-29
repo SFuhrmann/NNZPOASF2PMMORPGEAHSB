@@ -3,9 +3,7 @@ using System.Collections;
 
 public class _ObjLaptopScreenController : ObjController {
 
-    public GameObject ninjaProgramm;
-
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
 	
 	}
@@ -18,6 +16,5 @@ public class _ObjLaptopScreenController : ObjController {
     void OnMouseDown()
     {
         GameManager.instance.setUnhideDesktopNinjaDone();
-        ninjaProgramm.SetActive(true);
     }
 }
