@@ -6,6 +6,7 @@ public class ToolTipController : MonoBehaviour {
     public GUISkin skin;
 	public GameObject archieveBG;
 	public GameObject hintBG;
+    public TextMesh achieveText, hintText;
 
 	private string instanceToolTip = "";
     private float cooldownTime = 0f;
@@ -36,7 +37,7 @@ public class ToolTipController : MonoBehaviour {
 		}
 	}
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.skin = skin;
 		GUI.contentColor = Color.black;
@@ -45,24 +46,26 @@ public class ToolTipController : MonoBehaviour {
 		} else {
 			GUI.Label(new Rect(425, 250, Screen.width, 500), instanceToolTip);
 		}
-    }
+    }*/
 
 	public void setToolTip(string toolTip, bool hint = true) {
 		if (hint == false) {
 			this.hint = false;
-			instanceToolTip = toolTip;
-			cooldownTime = 1.5f;
-			cooldownIsRunning = true;
+			achieveText.text = toolTip;
+            //print(achieveText.text);
+			cooldownTime = 3f;			cooldownIsRunning = true;
 			hintBG.SetActive(false);
 			archieveBG.SetActive(true);
+            GetComponent<AudioSource>().Play();
 		} else {
 			this.hint = true;
-			instanceToolTip = toolTip;
-			cooldownTime = 1.5f;
+            hintText.text = toolTip;
+            //print(hintText.text);
+			cooldownTime = 3f;
 			cooldownIsRunning = true;
 			hintBG.SetActive(true);
 		}
-
+        
 
 	}
 }
