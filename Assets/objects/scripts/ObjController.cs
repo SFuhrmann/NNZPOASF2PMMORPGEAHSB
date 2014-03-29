@@ -5,6 +5,7 @@ public class ObjController : MonoBehaviour {
 
     public string toolTipMessage;
     protected bool dragging, draggingReady;
+    public bool draggable = true;
     private int screenHeight, screenWidth;
     private float cameraSizeY = 10;
     private float cameraSizeX = 18;
@@ -34,7 +35,8 @@ public class ObjController : MonoBehaviour {
 
     void OnMouseDown()
     {
-        dragging = true;
+        if (draggable)
+            dragging = true;
     }
 
     void OnMouseUp()
