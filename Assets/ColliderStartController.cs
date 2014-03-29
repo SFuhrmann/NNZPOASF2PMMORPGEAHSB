@@ -13,7 +13,11 @@ public class ColliderStartController : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		Debug.Log ("NEXT");
+        if (!GameObject.Find("MusicLoop").GetComponent<AudioSource>().isPlaying)
+        {
+            GameObject.Find("MusicLoop").GetComponent<AudioSource>().Play();
+            GameObject.Find("WimpyLoop").GetComponent<AudioSource>().Play();
+        }
 		Application.LoadLevel ("scene");
 	}
 }

@@ -6,12 +6,20 @@ public class epicCameraZoom : MonoBehaviour {
 	public float vSpeed;
 	public GameObject[] logoObjects;
 	private bool ready;
+    public GameObject musicLoop;
+    public GameObject wimpyLoop;
 
 	private float runningTime;
 	// Use this for initialization
 	void Start () {
 	
 	}
+
+    void Awake()
+    {
+        DontDestroyOnLoad(musicLoop);
+        DontDestroyOnLoad(wimpyLoop);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,6 +35,8 @@ public class epicCameraZoom : MonoBehaviour {
 				logoObjects [index].SetActive (true);
 		} else {
 				ready = true;
+                musicLoop.GetComponent<AudioSource>().Play();
+                wimpyLoop.GetComponent<AudioSource>().Play();
 		}
 	}
 }

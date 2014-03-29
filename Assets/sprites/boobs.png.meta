@@ -21,16 +21,16 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -44,6 +44,105 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: boobs_0
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1539
+        width: 512
+        height: 263
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1287
+        width: 122
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1190
+        width: 479
+        height: 300
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 950
+        width: 122
+        height: 175
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_4
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 914
+        width: 499
+        height: 243
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 670
+        width: 122
+        height: 158
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 638
+        width: 511
+        height: 243
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 390
+        width: 138
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_8
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 329
+        width: 499
+        height: 260
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 61
+        width: 146
+        height: 167
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: boobs_10
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 41
+        width: 471
+        height: 199
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

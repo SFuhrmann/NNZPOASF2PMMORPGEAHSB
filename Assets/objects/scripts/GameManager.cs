@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	internal static GameManager instance;
 
 	public ChecklistController checklist;
+    public _ObjLaptopScreenController screen;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Camera.main.GetComponent<CameraScript>().zoomingIN = true;
+            screen.fadeTimer = screen.fadeTime;
         }
     }
 
