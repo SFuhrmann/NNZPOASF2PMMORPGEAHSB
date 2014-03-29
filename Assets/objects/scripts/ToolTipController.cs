@@ -33,7 +33,7 @@ public class ToolTipController : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = skin;
-        GUI.Label(new Rect(10, 10, Screen.width, 100), instanceToolTip);
+        GUI.Label(new Rect(20, 20, Screen.width, 100), instanceToolTip);
     }
 
 	public void setToolTip(string toolTip) {
