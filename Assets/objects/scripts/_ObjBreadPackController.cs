@@ -14,8 +14,9 @@ public class _ObjBreadPackController : ObjController {
         base.Update();
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-        print("collides");
+        if (dragging || !draggingReady) return;
+        print("collides breadpack");
     }
 }

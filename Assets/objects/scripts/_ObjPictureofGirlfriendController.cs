@@ -12,4 +12,10 @@ public class _ObjPictureofGirlfriendController : ObjController {
 	void Update () {
         base.Update();
 	}
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (dragging || !draggingReady) return;
+        print("collides picture");
+    }
 }

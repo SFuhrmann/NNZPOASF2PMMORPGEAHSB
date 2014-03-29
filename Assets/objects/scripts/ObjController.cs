@@ -4,7 +4,7 @@ using System.Collections;
 public class ObjController : MonoBehaviour {
 
     public string toolTipMessage;
-    private bool dragging = false;
+    protected bool dragging, draggingReady;
     private int screenHeight, screenWidth;
     private float cameraSizeY = 10;
     private float cameraSizeX = 18;
@@ -23,9 +23,6 @@ public class ObjController : MonoBehaviour {
         {
             Vector3 mp = Input.mousePosition;
 
-            print(screenHeight);
-            print(screenWidth);
-
             //normalize mouse position to 0..1
             mp.y = mp.y / screenHeight * cameraSizeY - (cameraSizeY / 2);
             mp.x = mp.x / screenWidth * cameraSizeX - (cameraSizeX / 2);
@@ -37,20 +34,19 @@ public class ObjController : MonoBehaviour {
 
     void OnMouseDown()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
         dragging = true;
     }
 
     void OnMouseUp()
     {
-        GetComponent<BoxCollider2D>().enabled = true;
         dragging = false;
+        draggingReady = true;
         ///Think about letting it there as it is or delete it away
         {
             OnClicked();
         }
 
-        Invoke("resetPosition", 1);
+        Invoke("resetPosition", 0.02f);
     }
 
     //called when no swipe is detected
@@ -60,7 +56,7 @@ public class ObjController : MonoBehaviour {
 
     void resetPosition()
     {
-        print(GetComponent<BoxCollider2D>().enabled);
+        draggingReady = false;
         transform.position = startPosition;
     }
 }
