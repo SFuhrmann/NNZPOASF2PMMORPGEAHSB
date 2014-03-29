@@ -3,19 +3,20 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	private bool givenCoffee = false;
+	private bool drunkCoffee = false;
 	private bool deletedDesktopNinja = false;
 	private bool unhideDesktopNinja = false;
 	private bool trashedPencil = false;
 	private bool eatenChocolateBar = false;
 	private bool openedLunchPack = false;
-	private bool trashedGirlfriendPhoto = false;
+	private bool paintedGirlfriendPhoto = false;
 	private bool sentMail = false;
 	private bool trashedOrc = false;
 	private bool attackedColleague = false;
 	private bool answeredPhoneCall = false;
 	private bool fixedBug = false;
     private bool openedBreadPack = false;
+    private bool cleanedCoffeeStain = false;
 
 	internal static GameManager instance;
 
@@ -25,16 +26,16 @@ public class GameManager : MonoBehaviour {
 		instance = this;
 	}
 
-	public void setGivenCoffeeDone() {
-		givenCoffee = true;
+	public void setDrunkCoffeeDone() {
+		drunkCoffee = true;
 	}
 
-	public void setDeletedDesktopNinjaDone() {
+	public void setDeletedDesktopNinjaDone(GameObject ninja) {
 		if (unhideDesktopNinja) {
 			deletedDesktopNinja = true;
+            Destroy(ninja);
 			checklist.checkListItem(ChecklistController.NINJA_QUEST);
 		} else {
-			Debug.Log ("You have to unhide the desktop ninja first");
 		}
 	}
 
@@ -42,8 +43,13 @@ public class GameManager : MonoBehaviour {
 		unhideDesktopNinja = true;
 	}
 
-	public void setTrashedPencilDone() {
-		trashedPencil = true;
+	public void setTrashedPencilDone(GameObject pen) {
+		
+        if (paintedGirlfriendPhoto)
+        {
+            Destroy(pen);
+            trashedPencil = true;
+        }   
 	}
 
 	public void setEatenChocolateBarDone() {
@@ -54,16 +60,22 @@ public class GameManager : MonoBehaviour {
 		openedLunchPack = true;
 	}
 
-	public void setTrashedGirlfriendPhotoDone() {
-		trashedGirlfriendPhoto = true;
+    public void setPaintedGirlfriendPhotoDone()
+    {
+        paintedGirlfriendPhoto = true;
 	}
 
 	public void setSentMailDone() {
 		sentMail = true;
 	}
 
-	public void setTrashedOrcDone() {
-		trashedOrc = true;
+	public bool setTrashedOrcDone() {
+        if (cleanedCoffeeStain)
+        {
+            trashedOrc = true;
+            return true;
+        }
+        return false;
 	}
 
 	public void setAttackedColleagueDone() {
@@ -81,5 +93,10 @@ public class GameManager : MonoBehaviour {
     public void setOpenedBreadPackDone()
     {
         openedBreadPack = true;
+    }
+
+    public void setCleanedCoffeeStainDone()
+    {
+        cleanedCoffeeStain = true;
     }
 }

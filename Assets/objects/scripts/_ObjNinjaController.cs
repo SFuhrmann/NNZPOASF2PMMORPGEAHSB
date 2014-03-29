@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _ObjCoffeeCupController : ObjController {
-
-    public GameObject stain;
-    public GameObject paper;
+public class _ObjNinjaController : ObjController {
 
 	// Use this for initialization
 	void Start () {
-	    
+        
 	}
 	
 	// Update is called once per frame
@@ -19,11 +16,9 @@ public class _ObjCoffeeCupController : ObjController {
     void OnTriggerStay2D(Collider2D col)
     {
         if (dragging || !draggingReady) return;
-        if (col.CompareTag("Self"))
+        if (col.CompareTag("Bin"))
         {
-            GameManager.instance.setDrunkCoffeeDone();
-            stain.SetActive(true);
-            paper.SetActive(true);
+            GameManager.instance.setDeletedDesktopNinjaDone(gameObject);
         }
     }
 }

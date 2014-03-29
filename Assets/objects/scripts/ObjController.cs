@@ -29,14 +29,19 @@ public class ObjController : MonoBehaviour {
             mp.x = mp.x / screenWidth * cameraSizeX - (cameraSizeX / 2);
 
             //set position
-            transform.position = mp;
+            transform.position = new Vector3(mp.x, mp.y, transform.position.z);
         }
 	}
 
     void OnMouseDown()
     {
         if (draggable)
+        {
+            Vector3 newPos = transform.position;
+            newPos.z = -5;
+            transform.position = newPos;
             dragging = true;
+        }
     }
 
     void OnMouseUp()

@@ -17,6 +17,17 @@ public class _ObjPaperController : ObjController {
 	void OnTriggerStay2D(Collider2D col)
 	{
 		if (dragging || !draggingReady) return;
-		print("collides paper");
+        if (col.CompareTag("Stain"))
+        {
+            GameManager.instance.setCleanedCoffeeStainDone();
+            Destroy(col.gameObject);
+        }
+        if (col.CompareTag("OrcBooger"))
+        {
+            if (GameManager.instance.setTrashedOrcDone())
+            {
+                Destroy(col.gameObject);
+            }
+        }
 	}
 }

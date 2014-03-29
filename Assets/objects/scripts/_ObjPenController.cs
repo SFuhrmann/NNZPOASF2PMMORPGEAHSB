@@ -15,6 +15,13 @@ public class _ObjPenController : ObjController {
 	void OnTriggerStay2D(Collider2D col)
 	{
 		if (dragging || !draggingReady) return;
-		print("collides pen");
+        if (col.CompareTag("Bin"))
+        {
+            GameManager.instance.setTrashedPencilDone(gameObject);
+        }
+        if (col.CompareTag("PictureOfGirlfriend"))
+        {
+            GameManager.instance.setPaintedGirlfriendPhotoDone();
+        }
 	}
 }

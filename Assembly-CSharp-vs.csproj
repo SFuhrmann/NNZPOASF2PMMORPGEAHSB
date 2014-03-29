@@ -53,12 +53,15 @@
      <Compile Include="Assets\objects\scripts\ToolTipController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjBreadPackController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjCoffeeCupController.cs" />
+     <Compile Include="Assets\objects\scripts\_ObjLaptopScreenController.cs" />
+     <Compile Include="Assets\objects\scripts\_ObjNinjaController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjNotebookController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjOrcBoogerController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjPaperController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjPenController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjPhoneController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjPictureofGirlfriendController.cs" />
+     <Compile Include="Assets\objects\scripts\_ObjStainController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
