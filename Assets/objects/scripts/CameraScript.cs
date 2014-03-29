@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 
+	public float ortographicZoomIn;
+	public float zoomInX;
+	public float zoomInY;
 	public bool zoomingIN = false;
 
 	// Use this for initialization
@@ -13,36 +16,38 @@ public class CameraScript : MonoBehaviour {
 	void Update () {
 
 		if (zoomingIN) {
-						cameraZoomIN ();
+			cameraZoomIN ();
+
 		} else {
-						cameraZoomOUT ();
+			cameraZoomOUT ();
 		}
 	}
 	void cameraZoomIN () {
-		if (Camera.main.orthographicSize >= 2.5f) {
-				Camera.main.orthographicSize -= 0.1f;
-		}
-		if (Camera.main.transform.position.x >= -2f) {
+		if (Camera.main.transform.position.x >= zoomInX) {
 				Camera.main.transform.Translate (-0.1f, 0, 0);
 		}
-		if (Camera.main.transform.position.y <= 2.2f) {
+		if (Camera.main.transform.position.y <= zoomInY) {
 				Camera.main.transform.Translate (0, 0.1f, 0);
 		}
-		if (Camera.main.orthographicSize <= 2.5f) {
+		if (Camera.main.orthographicSize >= ortographicZoomIn) {
+			Camera.main.orthographicSize -= 0.1f;
+		}
+		if (Camera.main.orthographicSize <= ortographicZoomIn) {
 			//this.zoomingIN = false;
 			//Debug.Log ("Zoomed IN");
-			Camera.main.orthographicSize = 2.5f;
+			Camera.main.orthographicSize = ortographicZoomIn;
 		}
 	}
 	void cameraZoomOUT () {
-		if (Camera.main.orthographicSize <= 5.0f) {
-			Camera.main.orthographicSize += 0.1f;
-		}
+
 		if (Camera.main.transform.position.x < 0f) {
 			Camera.main.transform.Translate (0.1f, 0, 0);
 		}
 		if (Camera.main.transform.position.y > 0f) {
 			Camera.main.transform.Translate (0, -0.1f, 0);
+		}
+		if (Camera.main.orthographicSize <= 5.0f) {
+			Camera.main.orthographicSize += 0.1f;
 		}
 		if (Camera.main.orthographicSize >= 5.0f) {
 			//Debug.Log ("Zoomed OUT");
@@ -50,4 +55,5 @@ public class CameraScript : MonoBehaviour {
 			//this.zoomingIN = true;
 		}
 	}
+
 }
