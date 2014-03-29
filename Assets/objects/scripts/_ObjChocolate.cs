@@ -33,5 +33,7 @@ public class _ObjChocolate : ObjController {
 
             Destroy(gameObject);
         }
+		else
+			ToolTipController.instance.setToolTip("Oh Schokolade!");
     }
 }

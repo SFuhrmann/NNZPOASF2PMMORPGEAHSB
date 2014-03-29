@@ -12,4 +12,9 @@ public class _ObjStainController : ObjController {
 	void Update () {
 	
 	}
+
+	void OnMouseDown()
+	{
+		ToolTipController.instance.setToolTip("Ohje, ein Kaffeefleck");
+	}
 }

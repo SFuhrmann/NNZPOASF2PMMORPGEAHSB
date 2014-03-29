@@ -22,7 +22,7 @@ public class _ObjPaperController : ObjController {
             GameManager.instance.setCleanedCoffeeStainDone();
             Destroy(col.gameObject);
         }
-        if (col.CompareTag("OrcBooger"))
+        else if (col.CompareTag("OrcBooger"))
         {
 			polish.Play ();
             if (GameManager.instance.setTrashedOrcDone())
@@ -30,6 +30,8 @@ public class _ObjPaperController : ObjController {
                 Destroy(col.gameObject);
             }
         }
+		else if (!GameManager.instance.trashedOrc)
+			ToolTipController.instance.setToolTip ("Da gibt es nichts wegzuwischen");
         /*if (col.CompareTag("Enemy"))
         {
             GameManager.instance.setThrownPaperDone();

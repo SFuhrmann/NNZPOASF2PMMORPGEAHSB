@@ -20,5 +20,9 @@ public class _ObjNinjaController : ObjController {
         {
             GameManager.instance.setDeletedDesktopNinjaDone(gameObject);
         }
+		else
+		{
+			ToolTipController.instance.setToolTip("Was mach ich nur mit dem Ninja?");
+		}
     }
 }

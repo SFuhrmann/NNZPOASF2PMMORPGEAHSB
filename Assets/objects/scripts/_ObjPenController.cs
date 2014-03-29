@@ -23,10 +23,14 @@ public class _ObjPenController : ObjController {
             GameManager.instance.setTrashedPencilDone(gameObject);
 			pen.Play();
         }
-        if (col.CompareTag("PictureOfGirlfriend"))
+        else if (col.CompareTag("PictureOfGirlfriend"))
         {
             GameManager.instance.setPaintedGirlfriendPhotoDone();
 			penDraw.Play();
         }
+		else
+		{
+			ToolTipController.instance.setToolTip("Da will ich nichts schreiben");
+		}
 	}
 }

@@ -30,5 +30,7 @@ public class BananaSausage : ObjController {
             if (GameManager.instance.setThrownBananaSausageDone())
                 Destroy(gameObject);
         }
+		else
+			ToolTipController.instance.setToolTip("Was mach ich bloß damit?");
     }
 }

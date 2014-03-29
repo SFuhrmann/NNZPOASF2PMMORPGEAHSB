@@ -18,4 +18,9 @@ public class _ObjOrcBoogerController : ObjController {
 		print("collides booger");
 	}
 
+	void OnMouseDown()
+	{
+		ToolTipController.instance.setToolTip("Den Popel sollte ich mal wegwischen");
+	}
+
 }
