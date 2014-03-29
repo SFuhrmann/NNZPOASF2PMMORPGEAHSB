@@ -64,10 +64,13 @@ public class GameManager : MonoBehaviour {
 
 
 	public void setDrunkCoffeeDone() {
-		drunkCoffee = true;
-        healZombie = true;
-        checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
-        ToolTipController.instance.setToolTip("WACH!!!");
+		if (!drunkCoffee)
+		{
+			drunkCoffee = true;
+	        healZombie = true;
+	        checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
+	        ToolTipController.instance.setToolTip("WACH!!!");
+		}
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
@@ -111,7 +114,7 @@ public class GameManager : MonoBehaviour {
 		eatenChocolateBar = true;
         checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
-        ToolTipController.instance.setToolTip("Das war lecker");
+        ToolTipController.instance.setToolTip("Lecker");
 	}
 
 	public void setOpenedLunchPackDone() {
@@ -120,10 +123,13 @@ public class GameManager : MonoBehaviour {
 
     public void setPaintedGirlfriendPhotoDone()
     {
-        paintedGirlfriendPhoto = true;
-        checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
-        lookAtBreasts = true;
-        ToolTipController.instance.setToolTip("So ist es schöner");
+		if (!paintedGirlfriendPhoto) 
+		{
+	        paintedGirlfriendPhoto = true;
+	        checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
+	        lookAtBreasts = true;
+	        ToolTipController.instance.setToolTip("So ist es schöner");
+		}
 	}
 
 	public void setSentMailDone() {
@@ -133,7 +139,7 @@ public class GameManager : MonoBehaviour {
 	public bool setTrashedOrcDone() {
         if (cleanedCoffeeStain)
         {
-            ToolTipController.instance.setToolTip("Ihh Popel mit Kaffeematsch");
+            ToolTipController.instance.setToolTip("Ihh - Popel mit Kaffeematsch");
             trashedOrc = true;
             checklist.checkListItem(ChecklistController.ORC_QUEST);
             huntOrc = true;
@@ -146,7 +152,7 @@ public class GameManager : MonoBehaviour {
 
 	public void setAttackedColleagueDone() {
 		attackedColleague = true;
-        ToolTipController.instance.setToolTip("Er wirft nach mir - Ich brauche Waffen");
+        
 	}
 
 	public void setAnsweredPhoneCallDone() {
@@ -162,7 +168,6 @@ public class GameManager : MonoBehaviour {
     public void setOpenedBreadPackDone()
     {
         openedBreadPack = true;
-        ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
     }
 
     public void setCleanedCoffeeStainDone()
@@ -175,33 +180,48 @@ public class GameManager : MonoBehaviour {
     {
         duelStarted = true;
         duelResetTimer = duelResetTime;
+		ToolTipController.instance.setToolTip("Er wirft nach mir - Ich muss mich wehren");
     }
 
     public bool setThrownPaperDone()
     {
         if (duelStarted && drunkCoffee && trashedOrc)
         {
+			ToolTipController.instance.setToolTip("Nimm das!");
             thrownPaper = true;
+			if (thrownBananaSausage)
+			{
+				winPvp = true;
+				checklist.checkListItem(ChecklistController.PVP_QUEST);
+			}
             
             return true;
         }
+		ToolTipController.instance.setToolTip("Ich muss ihn erst heraus fordern");
+
         return false;
     }
 
     public bool setThrownBananaSausageDone()
     {
-        if (duelStarted && thrownPaper)
+        if (duelStarted)
         {
+			ToolTipController.instance.setToolTip("Fang!");
             thrownBananaSausage = true;
-            winPvp = true;
-            checklist.checkListItem(ChecklistController.PVP_QUEST);
+			if (thrownPaper)
+			{
+            	winPvp = true;
+            	checklist.checkListItem(ChecklistController.PVP_QUEST);
+			}
             return true;
         }
+		ToolTipController.instance.setToolTip("Ich muss ihn erst heraus fordern");
         return false;
     }
 
     void Win()
     {
+		ToolTipController.instance.setToolTip("Haha, ich kann alles");
         Application.LoadLevel(Application.loadedLevel);
     }
 }

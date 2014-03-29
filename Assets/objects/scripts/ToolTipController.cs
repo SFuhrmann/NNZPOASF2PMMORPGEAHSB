@@ -38,7 +38,7 @@ public class ToolTipController : MonoBehaviour {
 
 	public void setToolTip(string toolTip) {
 		instanceToolTip = toolTip;
-        cooldownTime = 1f;
+        cooldownTime = 1.2f;
         cooldownIsRunning = true;
 	}
 }

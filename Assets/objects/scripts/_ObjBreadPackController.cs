@@ -25,6 +25,7 @@ public class _ObjBreadPackController : ObjController {
         {
 			openBox.Play ();
             openPack = true;
+			ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
             chocolate.SetActive(true);
             bananaSausage.SetActive(true);
         }
