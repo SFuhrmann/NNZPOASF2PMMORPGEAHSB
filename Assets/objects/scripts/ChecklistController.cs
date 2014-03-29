@@ -3,14 +3,14 @@ using System.Collections;
 
 public class ChecklistController : MonoBehaviour {
 
-	public static int NINJA_QUEST = 4;
+	public static int NINJA_QUEST = 5;
 	public static int ZOMBIE_QUEST = 0;
 	public static int NAZI_QUEST = 1;
 	public static int PIRATE_QUEST = 2;
 	public static int ORC_QUEST = 3;
-	public static int PVP_QUEST = 6;
-	public static int GIRLFRIEND_QUEST = 7;
-	public static int ALIEN_QUEST = 5;
+	public static int PVP_QUEST = 7;
+	public static int GIRLFRIEND_QUEST = 4;
+	public static int ALIEN_QUEST = 6;
 
 	public AudioSource openSound;
 	public AudioSource closeSound;

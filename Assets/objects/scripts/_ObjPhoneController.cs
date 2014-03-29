@@ -13,6 +13,11 @@ public class _ObjPhoneController : ObjController {
 
 	// Use this for initialization
 	void Start () {
+	}
+	
+	// Update is called once per frame
+    void Update()
+    {
         if (pressedTimer > 0)
         {
             pressedTimer -= Time.deltaTime;
@@ -22,10 +27,6 @@ public class _ObjPhoneController : ObjController {
             pressedTimer = 0;
             phoneSprite.sprite = nonPressedSprite;
         }	
-	}
-	
-	// Update is called once per frame
-	void Update () {
 	}
 	void OnSwipeUp() { 
 		//do something sweet
@@ -54,5 +55,7 @@ public class _ObjPhoneController : ObjController {
         {
             GameManager.instance.setAnsweredPhoneCallDone();
         }
+
+        pressedTimer = pressedTime;
     }
 }
