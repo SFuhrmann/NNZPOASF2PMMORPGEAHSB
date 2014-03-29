@@ -3,7 +3,12 @@ using System.Collections;
 
 public class ToolTipController : MonoBehaviour {
 
-	private string instanceToolTip;
+    public GUISkin skin;
+
+	private string instanceToolTip = "";
+    private float cooldownTime = 0f;
+    private bool cooldownIsRunning = false;
+
 	internal static ToolTipController instance;
 
 	// Use this for initialization
@@ -13,10 +18,27 @@ public class ToolTipController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (cooldownIsRunning)
+        {
+            if (cooldownTime > 0)
+                cooldownTime -= Time.deltaTime;
+            else
+            {
+                cooldownIsRunning = false;
+                instanceToolTip = "";
+            }
+        }
 	}
+
+    void OnGUI()
+    {
+        GUI.skin = skin;
+        GUI.Label(new Rect(10, 10, Screen.width, 100), instanceToolTip);
+    }
 
 	public void setToolTip(string toolTip) {
 		instanceToolTip = toolTip;
+        cooldownTime = 1f;
+        cooldownIsRunning = true;
 	}
 }

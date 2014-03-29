@@ -78,14 +78,18 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setTrashedPencilDone(GameObject pen) {
-		
+
         if (paintedGirlfriendPhoto)
         {
             Destroy(pen);
             killNazi = true;
             checklist.checkListItem(ChecklistController.NAZI_QUEST);
             trashedPencil = true;
-        }   
+        }
+        else
+        {
+            ToolTipController.instance.setToolTip("Den brauche ich noch");
+        }
 	}
 
 	public void setEatenChocolateBarDone() {
