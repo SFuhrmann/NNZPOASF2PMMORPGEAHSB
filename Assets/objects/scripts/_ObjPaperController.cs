@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class _ObjPaperController : ObjController {
-
+	public AudioSource polish;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,6 +24,7 @@ public class _ObjPaperController : ObjController {
         }
         if (col.CompareTag("OrcBooger"))
         {
+			polish.Play ();
             if (GameManager.instance.setTrashedOrcDone())
             {
                 Destroy(col.gameObject);

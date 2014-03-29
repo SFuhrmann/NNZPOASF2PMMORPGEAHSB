@@ -6,6 +6,7 @@ public class _ObjBreadPackController : ObjController {
     private bool openPack;
     public GameObject chocolate;
     public GameObject bananaSausage;
+	public AudioSource openBox;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class _ObjBreadPackController : ObjController {
     {
         if (!openPack)
         {
+			openBox.Play ();
             openPack = true;
             chocolate.SetActive(true);
             bananaSausage.SetActive(true);

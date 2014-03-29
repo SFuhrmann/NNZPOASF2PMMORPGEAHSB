@@ -14,6 +14,9 @@ public class ChecklistController : MonoBehaviour {
 	public static int ALIEN_QUEST = 8;
 	public static int BETA_QUEST = 9;
 
+	public AudioSource openSound;
+	public AudioSource closeSound;
+
     public GameObject[] listCheckMarks;
     public GameObject questlogNear;
 
@@ -36,5 +39,7 @@ public class ChecklistController : MonoBehaviour {
     void OnMouseDown()
     {
         questlogNear.SetActive(true);
+		openSound.Play ();
+
     }
 }

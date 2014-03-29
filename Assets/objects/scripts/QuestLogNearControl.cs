@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class QuestLogNearControl : MonoBehaviour {
-
+	public AudioSource close;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,6 +15,7 @@ public class QuestLogNearControl : MonoBehaviour {
 
     void OnMouseDown()
     {
+		close.Play ();
         gameObject.SetActive(false);
     }
 }

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class _ObjPenController : ObjController {
 
+	public AudioSource pen;
+	public AudioSource penDraw;
+
 	void Start () {
 		toolTipMessage = "Das ist dein Stift";
 	}
@@ -18,10 +21,12 @@ public class _ObjPenController : ObjController {
         if (col.CompareTag("Bin"))
         {
             GameManager.instance.setTrashedPencilDone(gameObject);
+			pen.Play();
         }
         if (col.CompareTag("PictureOfGirlfriend"))
         {
             GameManager.instance.setPaintedGirlfriendPhotoDone();
+			penDraw.Play();
         }
 	}
 }
