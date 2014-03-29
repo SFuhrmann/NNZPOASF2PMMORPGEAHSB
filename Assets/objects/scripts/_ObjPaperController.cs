@@ -3,6 +3,10 @@ using System.Collections;
 
 public class _ObjPaperController : ObjController {
 	public AudioSource polish;
+
+	public Sprite coffee;
+	public Sprite orcish;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,12 +24,14 @@ public class _ObjPaperController : ObjController {
         if (col.CompareTag("Stain"))
         {
 			polish.Play ();
+			this.GetComponent<SpriteRenderer>().sprite = coffee;
             GameManager.instance.setCleanedCoffeeStainDone();
             Destroy(col.gameObject);
         }
         else if (col.CompareTag("OrcBooger"))
         {
 			polish.Play ();
+			this.GetComponent<SpriteRenderer>().sprite = orcish;
             if (GameManager.instance.setTrashedOrcDone())
             {
                 Destroy(col.gameObject);
