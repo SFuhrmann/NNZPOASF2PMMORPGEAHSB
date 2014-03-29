@@ -21,7 +21,7 @@ public class BugController : MonoBehaviour {
 		{
 			GetComponent<SpriteRenderer>().sprite = bugDead;
 			GetComponent<AudioSource>().Play();
-			ToolTipController.instance.setToolTip("Den Bug gefunden.", false);
+			ToolTipController.instance.setToolTip("Bonus: Den Bug gefunden.", false);
 			GameManager.instance.fixedBug = true;
 		}
         
