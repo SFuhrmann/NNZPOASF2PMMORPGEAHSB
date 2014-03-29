@@ -3,12 +3,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\objects\scripts\ToolTipController.cs">
     <Files>
       <File FileName="Assets\objects\scripts\_ObjNotebookController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\GameManager.cs" Line="230" Column="1" />
       <File FileName="Assets\objects\scripts\ObjController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\_ObjLaptopScreenController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\ToolTipController.cs" Line="33" Column="17" />
-      <File FileName="Assets\objects\scripts\BananaSausage.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\_ObjPhoneController.cs" Line="23" Column="17" />
+      <File FileName="Assets\objects\scripts\_ObjLaptopScreenController.cs" Line="54" Column="1" />
+      <File FileName="Assets\objects\scripts\ToolTipController.cs" Line="42" Column="34" />
+      <File FileName="Assets\objects\scripts\BananaSausage.cs" Line="37" Column="1" />
+      <File FileName="Assets\objects\scripts\_ObjPhoneController.cs" Line="23" Column="10" />
+      <File FileName="Assets\objects\scripts\ChecklistController.cs" Line="32" Column="6" />
+      <File FileName="Assets\objects\scripts\QuestLogNearControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

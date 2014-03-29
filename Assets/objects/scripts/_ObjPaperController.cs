@@ -19,6 +19,7 @@ public class _ObjPaperController : ObjController {
 		if (dragging || !draggingReady) return;
         if (col.CompareTag("Stain"))
         {
+			polish.Play ();
             GameManager.instance.setCleanedCoffeeStainDone();
             Destroy(col.gameObject);
         }

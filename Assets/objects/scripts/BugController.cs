@@ -17,7 +17,13 @@ public class BugController : MonoBehaviour {
 
     void OnMouseDown()
     {
-        GetComponent<SpriteRenderer>().sprite = bugDead;
-        GetComponent<AudioSource>().Play();
+		if (!GameManager.instance.fixedBug) 
+		{
+			GetComponent<SpriteRenderer>().sprite = bugDead;
+			GetComponent<AudioSource>().Play();
+			ToolTipController.instance.setToolTip("Den Bug gefunden.", false);
+			GameManager.instance.fixedBug = true;
+		}
+        
     }
 }

@@ -51,14 +51,14 @@ public class ToolTipController : MonoBehaviour {
 		if (hint == false) {
 			this.hint = false;
 			instanceToolTip = toolTip;
-			cooldownTime = 1.2f;
+			cooldownTime = 1.5f;
 			cooldownIsRunning = true;
 			hintBG.SetActive(false);
 			archieveBG.SetActive(true);
 		} else {
 			this.hint = true;
 			instanceToolTip = toolTip;
-			cooldownTime = 1.2f;
+			cooldownTime = 1.5f;
 			cooldownIsRunning = true;
 			hintBG.SetActive(true);
 		}
