@@ -44,7 +44,7 @@ public class ObjController : MonoBehaviour {
         }
     }
 
-    void OnMouseUp()
+    protected void OnMouseUp()
     {
         dragging = false;
         draggingReady = true;

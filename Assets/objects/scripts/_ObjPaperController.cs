@@ -30,9 +30,19 @@ public class _ObjPaperController : ObjController {
                 Destroy(col.gameObject);
             }
         }
-        if (col.CompareTag("Enemy"))
+        /*if (col.CompareTag("Enemy"))
         {
             GameManager.instance.setThrownPaperDone();
-        }
+        }*/
 	}
+
+    void OnMouseUp()
+    {
+        base.OnMouseUp();
+        if (transform.position.y > 4)
+        {
+            if (GameManager.instance.setThrownPaperDone())
+                Destroy(gameObject);
+        }
+    }
 }

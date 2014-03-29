@@ -15,6 +15,7 @@ public class _ObjLaptopEnemyController : MonoBehaviour {
 
     void OnMouseDown()
     {
+        print("laptop enemy");
         GameManager.instance.setDuelStarted();
     }
 }

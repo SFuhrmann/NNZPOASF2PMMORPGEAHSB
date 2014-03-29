@@ -3,26 +3,28 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	private bool drunkCoffee = false;
-	private bool deletedDesktopNinja = false;
-	private bool unhideDesktopNinja = false;
-	private bool trashedPencil = false;
-	private bool eatenChocolateBar = false;
-	private bool openedLunchPack = false;
-	private bool paintedGirlfriendPhoto = false;
-	private bool sentMail = false;
-	private bool trashedOrc = false;
-	private bool attackedColleague = false;
-	private bool answeredPhoneCall = false;
-	private bool fixedBug = false;
-    private bool openedBreadPack = false;
-    private bool cleanedCoffeeStain = false;
-    private bool duelStarted = false;
-    private bool thrownPaper = false;
-    private bool thrownBananaSausage = false;
-    private bool pvpWon = false;
-    private float duelResetTimer;
+	public bool drunkCoffee = false;
+	public bool deletedDesktopNinja = false;
+	public bool unhideDesktopNinja = false;
+	public bool trashedPencil = false;
+	public bool eatenChocolateBar = false;
+	public bool openedLunchPack = false;
+	public bool paintedGirlfriendPhoto = false;
+	public bool sentMail = false;
+	public bool trashedOrc = false;
+	public bool attackedColleague = false;
+	public bool answeredPhoneCall = false;
+	public bool fixedBug = false;
+    public bool openedBreadPack = false;
+    public bool cleanedCoffeeStain = false;
+    public bool duelStarted = false;
+    public bool thrownPaper = false;
+    public bool thrownBananaSausage = false;
+    public bool pvpWon = false;
+    public float duelResetTimer;
     public float duelResetTime = 15;
+
+    public bool healZombie, killNazi, findStash, huntOrc, getNinja, contactAlien, winPvp, lookAtBreasts;
 
 	internal static GameManager instance;
 
@@ -44,28 +46,29 @@ public class GameManager : MonoBehaviour {
             duelResetTimer = 0;
             duelStarted = false;
         }
+        CheckAllBools();
     }
 
     void CheckAllBools()
     {
-        if (drunkCoffee && deletedDesktopNinja && unhideDesktopNinja && trashedPencil && eatenChocolateBar &&
-            openedLunchPack && paintedGirlfriendPhoto && trashedOrc && /*answeredPhoneCall && */ fixedBug && openedBreadPack &&
-            cleanedCoffeeStain && duelStarted && thrownPaper && thrownBananaSausage && pvpWon)
+        if (healZombie && killNazi && findStash && huntOrc && getNinja /*&& contactAlien*/ && winPvp && lookAtBreasts)
             Win();
     }
 
 
 	public void setDrunkCoffeeDone() {
 		drunkCoffee = true;
-        CheckAllBools();
+        healZombie = true;
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
 		if (unhideDesktopNinja) {
+            getNinja = true;
 			deletedDesktopNinja = true;
             Destroy(ninja);
 			checklist.checkListItem(ChecklistController.NINJA_QUEST);
 		} else {
+
 		}
 	}
 
@@ -78,12 +81,14 @@ public class GameManager : MonoBehaviour {
         if (paintedGirlfriendPhoto)
         {
             Destroy(pen);
+            killNazi = true;
             trashedPencil = true;
         }   
 	}
 
 	public void setEatenChocolateBarDone() {
 		eatenChocolateBar = true;
+        findStash = true;
 	}
 
 	public void setOpenedLunchPackDone() {
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour {
     public void setPaintedGirlfriendPhotoDone()
     {
         paintedGirlfriendPhoto = true;
+        lookAtBreasts = true;
 	}
 
 	public void setSentMailDone() {
@@ -103,6 +109,7 @@ public class GameManager : MonoBehaviour {
         if (cleanedCoffeeStain)
         {
             trashedOrc = true;
+            huntOrc = true;
             return true;
         }
         return false;
@@ -133,18 +140,29 @@ public class GameManager : MonoBehaviour {
     public void setDuelStarted()
     {
         duelStarted = true;
+        duelResetTimer = duelResetTime;
     }
 
-    public void setThrownPaperDone()
+    public bool setThrownPaperDone()
     {
         if (duelStarted && drunkCoffee && trashedOrc)
+        {
             thrownPaper = true;
+            
+            return true;
+        }
+        return false;
     }
 
-    public void setThrownBananaSausageDone()
+    public bool setThrownBananaSausageDone()
     {
         if (duelStarted && thrownPaper)
+        {
             thrownBananaSausage = true;
+            winPvp = true;
+            return true;
+        }
+        return false;
     }
 
     void Win()

@@ -16,9 +16,19 @@ public class BananaSausage : ObjController {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (dragging || !draggingReady) return;
-        if (col.CompareTag("Enemy"))
+       /* if (col.CompareTag("Enemy"))
         {
             GameManager.instance.setThrownBananaSausageDone();
+        }*/
+    }
+
+    void OnMouseUp()
+    {
+        base.OnMouseUp();
+        if (transform.position.y > 4)
+        {
+            if (GameManager.instance.setThrownBananaSausageDone())
+                Destroy(gameObject);
         }
     }
 }

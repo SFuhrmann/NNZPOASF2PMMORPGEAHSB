@@ -21,13 +21,26 @@ public class _ObjCoffeeCupController : ObjController {
     void OnTriggerStay2D(Collider2D col)
     {
 		if (dragging || !draggingReady)	return;
-        if (col.CompareTag("Self"))
+        /*if (col.CompareTag("Self"))
         {
             GameManager.instance.setDrunkCoffeeDone();
             GetComponent<SpriteRenderer>().sprite = empty;
             stain.SetActive(true);
             paper.SetActive(true);
 			slurp.Play();
+        }*/
+    }
+
+    void OnMouseUp()
+    {
+        base.OnMouseUp();
+        if (transform.position.y < -4)
+        {
+            GameManager.instance.setDrunkCoffeeDone();
+            GetComponent<SpriteRenderer>().sprite = empty;
+            stain.SetActive(true);
+            paper.SetActive(true);
+            slurp.Play();
         }
     }
 }

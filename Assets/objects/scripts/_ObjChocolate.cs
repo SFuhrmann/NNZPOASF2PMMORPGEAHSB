@@ -16,7 +16,17 @@ public class _ObjChocolate : ObjController {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (dragging || !draggingReady) return;
-        if (col.CompareTag("Self"))
+        /*if (col.CompareTag("Self"))
+        {
+            GameManager.instance.setEatenChocolateBarDone();
+            Destroy(gameObject);
+        }*/
+    }
+
+    void OnMouseUp()
+    {
+        base.OnMouseUp();
+        if (transform.position.y < -4) 
         {
             GameManager.instance.setEatenChocolateBarDone();
             Destroy(gameObject);
