@@ -4,10 +4,14 @@ using System.Collections;
 public class ToolTipController : MonoBehaviour {
 
     public GUISkin skin;
+	public GameObject archieveBG;
+	public GameObject hintBG;
 
 	private string instanceToolTip = "";
     private float cooldownTime = 0f;
     private bool cooldownIsRunning = false;
+	private bool hint = true;
+
 
 	internal static ToolTipController instance;
 
@@ -25,20 +29,39 @@ public class ToolTipController : MonoBehaviour {
             else
             {
                 cooldownIsRunning = false;
-                instanceToolTip = "";
-            }
-        }
+				instanceToolTip = "";
+				archieveBG.SetActive(false);
+				hintBG.SetActive(false);
+			}
+		}
 	}
 
     void OnGUI()
     {
         GUI.skin = skin;
-        GUI.Label(new Rect(20, 20, Screen.width, 100), instanceToolTip);
+		if (this.hint == true) {
+			GUI.Label(new Rect(20, 20, Screen.width, 100), instanceToolTip);
+		} else {
+			GUI.Label(new Rect(425, 250, Screen.width, 500), instanceToolTip);
+		}
     }
 
-	public void setToolTip(string toolTip) {
-		instanceToolTip = toolTip;
-        cooldownTime = 1.2f;
-        cooldownIsRunning = true;
+	public void setToolTip(string toolTip, bool hint = true) {
+		if (hint == false) {
+			this.hint = false;
+			instanceToolTip = toolTip;
+			cooldownTime = 1.2f;
+			cooldownIsRunning = true;
+			hintBG.SetActive(false);
+			archieveBG.SetActive(true);
+		} else {
+			this.hint = true;
+			instanceToolTip = toolTip;
+			cooldownTime = 1.2f;
+			cooldownIsRunning = true;
+			hintBG.SetActive(true);
+		}
+
+
 	}
 }

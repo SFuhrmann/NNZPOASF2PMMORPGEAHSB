@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
 			drunkCoffee = true;
 	        healZombie = true;
 	        checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
-	        ToolTipController.instance.setToolTip("WACH!!!");
+	        ToolTipController.instance.setToolTip("WACH!!!", false);
 		}
 	}
 
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
 			deletedDesktopNinja = true;
             Destroy(ninja);
 			checklist.checkListItem(ChecklistController.NINJA_QUEST);
-            ToolTipController.instance.setToolTip("Weg ist er");
+            ToolTipController.instance.setToolTip("Weg ist er", false);
 		} else {
 
 		}
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour {
             killNazi = true;
             checklist.checkListItem(ChecklistController.NAZI_QUEST);
             trashedPencil = true;
-            ToolTipController.instance.setToolTip("Weg damit");
+            ToolTipController.instance.setToolTip("Weg damit", false);
         }
         else
         {
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour {
 		eatenChocolateBar = true;
         checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
-        ToolTipController.instance.setToolTip("Lecker");
+        ToolTipController.instance.setToolTip("Lecker", false);
 	}
 
 	public void setOpenedLunchPackDone() {
@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour {
 	        paintedGirlfriendPhoto = true;
 	        checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
 	        lookAtBreasts = true;
-	        ToolTipController.instance.setToolTip("So ist es schöner");
+	        ToolTipController.instance.setToolTip("So ist es schöner", false);
 		}
 	}
 
@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour {
 	public bool setTrashedOrcDone() {
         if (cleanedCoffeeStain)
         {
-            ToolTipController.instance.setToolTip("Ihh - Popel mit Kaffeematsch");
+            ToolTipController.instance.setToolTip("Ihh - Popel mit Kaffeematsch", false);
             trashedOrc = true;
             checklist.checkListItem(ChecklistController.ORC_QUEST);
             huntOrc = true;
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour {
 
     void Win()
     {
-		ToolTipController.instance.setToolTip("Haha, ich kann alles");
-        Application.LoadLevel(Application.loadedLevel);
+		ToolTipController.instance.setToolTip("Haha, ich kann alles", false);
+        Application.LoadLevel(0);
     }
 }
