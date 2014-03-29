@@ -39,6 +39,7 @@ public class ToolTipController : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = skin;
+		GUI.contentColor = Color.black;
 		if (this.hint == true) {
 			GUI.Label(new Rect(20, 20, Screen.width, 100), instanceToolTip);
 		} else {
