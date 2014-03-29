@@ -50,6 +50,7 @@
      <Compile Include="Assets\objects\scripts\BananaSausage.cs" />
      <Compile Include="Assets\objects\scripts\CameraScript.cs" />
      <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
+     <Compile Include="Assets\objects\scripts\DialDummy.cs" />
      <Compile Include="Assets\objects\scripts\GameManager.cs" />
      <Compile Include="Assets\objects\scripts\ObjController.cs" />
      <Compile Include="Assets\objects\scripts\QuestLogNearControl.cs" />

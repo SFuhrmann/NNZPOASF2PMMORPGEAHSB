@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 
     void CheckAllBools()
     {
-        if (healZombie && killNazi && findStash && huntOrc && getNinja /*&& contactAlien*/ && winPvp && lookAtBreasts)
+        if (healZombie && killNazi && findStash && huntOrc && getNinja && contactAlien && winPvp && lookAtBreasts)
             Win();
     }
 
@@ -151,6 +151,8 @@ public class GameManager : MonoBehaviour {
 
 	public void setAnsweredPhoneCallDone() {
 		answeredPhoneCall = true;
+        contactAlien = true;
+        checklist.checkListItem(ChecklistController.ALIEN_QUEST);
 	}
 
 	public void setFixedBugDone() {

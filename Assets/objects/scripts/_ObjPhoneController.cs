@@ -3,14 +3,29 @@ using System.Collections;
 
 public class _ObjPhoneController : ObjController {
 
+    public GameObject[] dialDummy;
+    public Sprite nonPressedSprite;
+    public Sprite[] pressedDownSprites;
+    public SpriteRenderer phoneSprite;
+    private int[] lastDialedNumbers = new int[3];
+    private float pressedTimer = 0;
+    public float pressedTime = 0.5f;
+
 	// Use this for initialization
 	void Start () {
-	
+        if (pressedTimer > 0)
+        {
+            pressedTimer -= Time.deltaTime;
+        }
+        else
+        {
+            pressedTimer = 0;
+            phoneSprite.sprite = nonPressedSprite;
+        }	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 	void OnSwipeUp() { 
 		//do something sweet
@@ -28,4 +43,16 @@ public class _ObjPhoneController : ObjController {
 		//do something nice
 		Debug.Log ("swipe left");
 	}
+
+    public void addNewNumber(int i)
+    {
+        lastDialedNumbers[2] = lastDialedNumbers[1];
+        lastDialedNumbers[1] = lastDialedNumbers[0];
+        lastDialedNumbers[0] = i;
+        print(lastDialedNumbers[0] + " " + lastDialedNumbers[1] + " " + lastDialedNumbers[2]);
+        if (lastDialedNumbers[0] == 6 && lastDialedNumbers[1] == 6 && lastDialedNumbers[2] == 6)
+        {
+            GameManager.instance.setAnsweredPhoneCallDone();
+        }
+    }
 }
