@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour {
             duelStarted = false;
         }
         CheckAllBools();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Camera.main.GetComponent<CameraScript>().zoomingIN = true;
+        }
     }
 
     void CheckAllBools()

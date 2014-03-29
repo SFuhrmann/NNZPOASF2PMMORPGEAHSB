@@ -15,6 +15,9 @@ public class _ObjLaptopScreenController : ObjController {
 
     void OnMouseDown()
     {
-        GameManager.instance.setUnhideDesktopNinjaDone();
+        if (Camera.main.GetComponent<CameraScript>().zoomingIN)
+            Camera.main.GetComponent<CameraScript>().zoomingIN = false;
+        else
+            GameManager.instance.setUnhideDesktopNinjaDone();
     }
 }
