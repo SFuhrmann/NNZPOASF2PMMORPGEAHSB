@@ -8,6 +8,9 @@ public class CameraScript : MonoBehaviour {
 	public float zoomInY;
 	public bool zoomingIN = false;
 
+	public GameObject GameMenu;
+	public GameObject Ingame;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -17,9 +20,13 @@ public class CameraScript : MonoBehaviour {
 
 		if (zoomingIN) {
 			cameraZoomIN ();
+			GameMenu.SetActive(true);
+			Ingame.SetActive(false);
 
 		} else {
 			cameraZoomOUT ();
+			GameMenu.SetActive(false);
+			Ingame.SetActive(true);
 		}
 	}
 	void cameraZoomIN () {

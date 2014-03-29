@@ -18,6 +18,6 @@ public class _ObjLaptopScreenController : ObjController {
         if (Camera.main.GetComponent<CameraScript>().zoomingIN)
             Camera.main.GetComponent<CameraScript>().zoomingIN = false;
         else
-            GameManager.instance.setUnhideDesktopNinjaDone();
+			GameManager.instance.setUnhideDesktopNinjaDone();
     }
 }

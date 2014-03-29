@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class _ObjChocolate : ObjController {
+	public AudioSource nom;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,7 @@ public class _ObjChocolate : ObjController {
         if (transform.position.y < -4) 
         {
             GameManager.instance.setEatenChocolateBarDone();
+
             Destroy(gameObject);
         }
     }
