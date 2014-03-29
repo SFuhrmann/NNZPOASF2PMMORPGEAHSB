@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _ObjPenController : ObjController {
+public class _ObjPaperController : ObjController {
 
+	// Use this for initialization
 	void Start () {
-		toolTipMessage = "Das ist dein Stift";
+		
 	}
-
+	
+	// Update is called once per frame
 	void Update () {
 		
 		base.Update();
@@ -15,6 +17,6 @@ public class _ObjPenController : ObjController {
 	void OnTriggerStay2D(Collider2D col)
 	{
 		if (dragging || !draggingReady) return;
-		print("collides pen");
+		print("collides paper");
 	}
 }

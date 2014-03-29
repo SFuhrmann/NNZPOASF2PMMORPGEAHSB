@@ -11,7 +11,7 @@ public class _ObjBreadPackController : ObjController {
 	// Update is called once per frame
 	void Update () {
 
-        base.Update();
+        //base.Update();
 	}
 
     void OnTriggerStay2D(Collider2D col)
