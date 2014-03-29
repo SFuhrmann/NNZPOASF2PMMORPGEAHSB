@@ -53,7 +53,7 @@ public class ToolTipController : MonoBehaviour {
 			this.hint = false;
 			achieveText.text = toolTip;
             //print(achieveText.text);
-			cooldownTime = 3f;
+			cooldownTime = 2f;			
 			cooldownIsRunning = true;
 			hintBG.SetActive(false);
 			archieveBG.SetActive(true);
@@ -62,7 +62,7 @@ public class ToolTipController : MonoBehaviour {
 			this.hint = true;
             hintText.text = toolTip;
             //print(hintText.text);
-			cooldownTime = 3f;
+			cooldownTime = 2f;
 			cooldownIsRunning = true;
 			hintBG.SetActive(true);
 		}

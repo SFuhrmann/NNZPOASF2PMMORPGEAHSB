@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
 			drunkCoffee = true;
 	        healZombie = true;
 	        checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
-	        ToolTipController.instance.setToolTip("WACH!!!", false);
+	        ToolTipController.instance.setToolTip("Zombievirus geheilt.", false);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
 			deletedDesktopNinja = true;
             Destroy(ninja);
 			checklist.checkListItem(ChecklistController.NINJA_QUEST);
-            ToolTipController.instance.setToolTip("Weg ist er", false);
+            ToolTipController.instance.setToolTip("Ninja überlistet.", false);
 		} else {
 
 		}
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour {
             killNazi = true;
             checklist.checkListItem(ChecklistController.NAZI_QUEST);
             trashedPencil = true;
-            ToolTipController.instance.setToolTip("Weg damit", false);
+            ToolTipController.instance.setToolTip("Nazi getötet.", false);
         }
         else
         {
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour {
 		eatenChocolateBar = true;
         checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
-        ToolTipController.instance.setToolTip("Lecker", false);
+        ToolTipController.instance.setToolTip("Schatz gefunden. Lecker.", false);
 	}
 
 	public void setOpenedLunchPackDone() {
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour {
 	        paintedGirlfriendPhoto = true;
 	        checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
 	        lookAtBreasts = true;
-	        ToolTipController.instance.setToolTip("So ist es schöner", false);
+	        ToolTipController.instance.setToolTip("Am Flittchen ergötzt.", false);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour {
 	public bool setTrashedOrcDone() {
         if (cleanedCoffeeStain)
         {
-            ToolTipController.instance.setToolTip("Ihh - Popel mit Kaffeematsch", false);
+            ToolTipController.instance.setToolTip("Den Ork beseitigt.", false);
             trashedOrc = true;
             checklist.checkListItem(ChecklistController.ORC_QUEST);
             huntOrc = true;
@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviour {
 		answeredPhoneCall = true;
         contactAlien = true;
         checklist.checkListItem(ChecklistController.ALIEN_QUEST);
+		ToolTipController.instance.setToolTip("Nach Hause telefoniert.", false);
 	}
 
 	public void setFixedBugDone() {
