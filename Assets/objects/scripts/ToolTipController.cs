@@ -53,7 +53,8 @@ public class ToolTipController : MonoBehaviour {
 			this.hint = false;
 			achieveText.text = toolTip;
             //print(achieveText.text);
-			cooldownTime = 3f;			cooldownIsRunning = true;
+			cooldownTime = 3f;			
+			cooldownIsRunning = true;
 			hintBG.SetActive(false);
 			archieveBG.SetActive(true);
             GetComponent<AudioSource>().Play();
