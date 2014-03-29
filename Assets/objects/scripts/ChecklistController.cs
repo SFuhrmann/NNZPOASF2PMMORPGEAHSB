@@ -15,6 +15,7 @@ public class ChecklistController : MonoBehaviour {
 	public static int BETA_QUEST = 9;
 
     public GameObject[] listCheckMarks;
+    public GameObject questlogNear;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,10 @@ public class ChecklistController : MonoBehaviour {
     {
         listCheckMarks[number].GetComponent<SpriteRenderer>().enabled = true;
         //listCheckMarks[number].GetComponent<Animator>().SetTrigger("Checked");
+    }
+
+    void OnMouseDown()
+    {
+        questlogNear.SetActive(true);
     }
 }

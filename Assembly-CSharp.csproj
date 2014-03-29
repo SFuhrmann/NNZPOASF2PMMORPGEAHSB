@@ -49,6 +49,7 @@
      <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
      <Compile Include="Assets\objects\scripts\GameManager.cs" />
      <Compile Include="Assets\objects\scripts\ObjController.cs" />
+     <Compile Include="Assets\objects\scripts\QuestLogNearControl.cs" />
      <Compile Include="Assets\objects\scripts\ToolTipController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjBreadPackController.cs" />
      <Compile Include="Assets\objects\scripts\_ObjCoffeeCupController.cs" />

@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{3130FFBD-7FDA-A6B1-7F69-65FFEEA7F5CB}</ProjectGuid>
+	<ProjectGuid>{C18F6355-0BC8-4B88-B035-E1D8013C93C7}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,19 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\objects\scripts\ChecklistController.cs" />
-     <Compile Include="Assets\objects\scripts\GameManager.cs" />
-     <Compile Include="Assets\objects\scripts\ObjController.cs" />
-     <Compile Include="Assets\objects\scripts\QuestLogNearControl.cs" />
-     <Compile Include="Assets\objects\scripts\ToolTipController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjBreadPackController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjCoffeeCupController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjNotebookController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjOrcBoogerController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjPaperController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjPenController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjPhoneController.cs" />
-     <Compile Include="Assets\objects\scripts\_ObjPictureofGirlfriendController.cs" />
+     <Compile Include="Assets\questlog_near_control.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
