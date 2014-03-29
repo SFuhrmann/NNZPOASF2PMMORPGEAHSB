@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour {
 	public void setDrunkCoffeeDone() {
 		drunkCoffee = true;
         healZombie = true;
+        checklist.checkListItem(ChecklistController.ZOMBIE_QUEST);
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
@@ -82,12 +83,14 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(pen);
             killNazi = true;
+            checklist.checkListItem(ChecklistController.NAZI_QUEST);
             trashedPencil = true;
         }   
 	}
 
 	public void setEatenChocolateBarDone() {
 		eatenChocolateBar = true;
+        checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
 	}
 
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour {
     public void setPaintedGirlfriendPhotoDone()
     {
         paintedGirlfriendPhoto = true;
+        checklist.checkListItem(ChecklistController.GIRLFRIEND_QUEST);
         lookAtBreasts = true;
 	}
 
@@ -109,6 +113,7 @@ public class GameManager : MonoBehaviour {
         if (cleanedCoffeeStain)
         {
             trashedOrc = true;
+            checklist.checkListItem(ChecklistController.ORC_QUEST);
             huntOrc = true;
             return true;
         }
@@ -160,6 +165,7 @@ public class GameManager : MonoBehaviour {
         {
             thrownBananaSausage = true;
             winPvp = true;
+            checklist.checkListItem(ChecklistController.PVP_QUEST);
             return true;
         }
         return false;
