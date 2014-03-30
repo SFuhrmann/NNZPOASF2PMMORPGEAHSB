@@ -6,6 +6,7 @@ public class _ObjLaptopScreenController : ObjController {
     AudioSource bgmEpic, bgmWimpy;
     public float fadeTimer;
     public float fadeTime = 1.0f;
+    public SpriteRenderer cover;
 
     // Use this for initialization
 	void Start () {
@@ -27,6 +28,10 @@ public class _ObjLaptopScreenController : ObjController {
                 fadeTimer -= Time.deltaTime;
                 bgmEpic.volume = fadeTimer / fadeTime;
                 bgmWimpy.volume = 1 - (fadeTimer / fadeTime);
+                Color newCol = cover.color;
+                newCol.a = fadeTimer / fadeTime;
+                cover.color = newCol;
+
             }
         }
         else
@@ -36,6 +41,9 @@ public class _ObjLaptopScreenController : ObjController {
                 fadeTimer -= Time.deltaTime;
                 bgmEpic.volume = 1 - (fadeTimer / fadeTime);
                 bgmWimpy.volume = fadeTimer / fadeTime;
+                Color newCol = cover.color;
+                newCol.a = 1 - (fadeTimer / fadeTime);
+                cover.color = newCol;
             }
         }
 	}

@@ -31,15 +31,21 @@ public class epicCameraZoom : MonoBehaviour {
 	
 	}
 	void animate () {
-		int index = (int)((runningTime) / 0.7f);
-		if (index < logoObjects.Length) {
-				logoObjects [index].SetActive (true);
-            if (index == 7)
-                bushes.SetTrigger("bushes");
-		} else {
-				ready = true;
+		int index = (int)((runningTime) / 0.7f) - 1;
+        if (index >= 0)
+        {
+            if (index < logoObjects.Length)
+            {
+                logoObjects[index].SetActive(true);
+
+            }
+            else
+            {
+                ready = true;
                 musicLoop.GetComponent<AudioSource>().Play();
                 wimpyLoop.GetComponent<AudioSource>().Play();
-		}
+                bushes.SetTrigger("bushes");
+            }
+        }
 	}
 }

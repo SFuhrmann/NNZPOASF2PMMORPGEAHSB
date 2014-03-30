@@ -91,8 +91,8 @@ public class GameManager : MonoBehaviour {
         if (!unhideDesktopNinja)
         {
             unhideDesktopNinja = true;
-            ToolTipController.instance.setToolTip("Oh ein Ninja");
             ninjaProgramm.SetActive(true);
+            ToolTipController.instance.setToolTip("Oh ein Ninja");
         }
 	}
 
@@ -225,6 +225,13 @@ public class GameManager : MonoBehaviour {
     void Win()
     {
 		ToolTipController.instance.setToolTip("Haha, ich kann alles", false);
+        Invoke("winwin", 3);
+    }
+
+    void winwin()
+    {
+        Destroy(GameObject.Find("WimpyLoop"));
+        Destroy(GameObject.Find("MusicLoop"));
         Application.LoadLevel(0);
     }
 }

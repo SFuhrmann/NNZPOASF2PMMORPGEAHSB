@@ -4,7 +4,7 @@ using System.Collections;
 public class _ObjPenController : ObjController {
 
 	public AudioSource pen;
-	public AudioSource penDraw;
+    public GameObject breastMenu;
 
 	void Start () {
 		toolTipMessage = "Das ist dein Stift";
@@ -25,8 +25,7 @@ public class _ObjPenController : ObjController {
         }
         else if (col.CompareTag("PictureOfGirlfriend"))
         {
-            GameManager.instance.setPaintedGirlfriendPhotoDone();
-			penDraw.Play();
+            breastMenu.SetActive(true);
         }
 		else
 		{

@@ -47,12 +47,22 @@ public class CameraScript : MonoBehaviour {
 	}
 	void cameraZoomOUT () {
 
-		if (Camera.main.transform.position.x < 0f) {
-			Camera.main.transform.Translate (0.1f, 0, 0);
-		}
-		if (Camera.main.transform.position.y > 0f) {
-			Camera.main.transform.Translate (0, -0.1f, 0);
-		}
+        if (Camera.main.transform.position.x < 0f)
+        {
+            Camera.main.transform.Translate(0.1f, 0, 0);
+        }
+        else
+        {
+            Camera.main.transform.position = new Vector3(0, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+        if (Camera.main.transform.position.y > 0f)
+        {
+            Camera.main.transform.Translate(0, -0.1f, 0);
+        }
+        else
+        {
+            Camera.main.transform.position = new Vector3(Camera.main.transform.position.y, 0, Camera.main.transform.position.z);
+        }
 		if (Camera.main.orthographicSize <= 5.0f) {
 			Camera.main.orthographicSize += 0.1f;
 		}
