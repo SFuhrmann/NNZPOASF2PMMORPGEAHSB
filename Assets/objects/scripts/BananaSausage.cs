@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BananaSausage : ObjController {
 
+    public GameObject chocolate;
+
 	// Use this for initialization
 	void Start () {
 	    
@@ -30,7 +32,11 @@ public class BananaSausage : ObjController {
             if (GameManager.instance.setThrownBananaSausageDone())
                 Destroy(gameObject);
         }
-		else
-			ToolTipController.instance.setToolTip("Was mach ich bloß damit?");
+        else if (transform.position.y < -4)
+        {
+            GameManager.instance.setTastedBananaSausageDone(gameObject);
+        }
+        else
+            ToolTipController.instance.setToolTip("Was mach ich bloß damit?");
     }
 }

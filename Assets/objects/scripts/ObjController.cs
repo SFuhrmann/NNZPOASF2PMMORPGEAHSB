@@ -9,7 +9,7 @@ public class ObjController : MonoBehaviour {
     private int screenHeight, screenWidth;
     private float cameraSizeY = 10;
     private float cameraSizeX = 18;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
 
 	// Use this for initialization
 	void Awake () {

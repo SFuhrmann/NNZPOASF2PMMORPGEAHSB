@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     public GameObject ninjaProgramm;
 
 	public bool drunkCoffee = false;
+    public bool tastedBananaSausage = false;
 	public bool deletedDesktopNinja = false;
 	public bool unhideDesktopNinja = false;
 	public bool trashedPencil = false;
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setDeletedDesktopNinjaDone(GameObject ninja) {
-		if (unhideDesktopNinja) {
+		if (unhideDesktopNinja && !deletedDesktopNinja) {
             getNinja = true;
 			deletedDesktopNinja = true;
             Destroy(ninja);
@@ -98,7 +99,7 @@ public class GameManager : MonoBehaviour {
 
 	public void setTrashedPencilDone(GameObject pen) {
 
-        if (paintedGirlfriendPhoto)
+        if (paintedGirlfriendPhoto && !trashedPencil)
         {
             Destroy(pen);
             killNazi = true;
@@ -113,6 +114,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setEatenChocolateBarDone() {
+        if (eatenChocolateBar) return;
 		eatenChocolateBar = true;
         checklist.checkListItem(ChecklistController.PIRATE_QUEST);
         findStash = true;
@@ -120,6 +122,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setOpenedLunchPackDone() {
+        if (!openedLunchPack) ;
 		openedLunchPack = true;
 	}
 
@@ -139,7 +142,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public bool setTrashedOrcDone() {
-        if (cleanedCoffeeStain)
+        if (cleanedCoffeeStain && !trashedOrc)
         {
             ToolTipController.instance.setToolTip("Den Ork beseitigt.", false);
             trashedOrc = true;
@@ -152,12 +155,23 @@ public class GameManager : MonoBehaviour {
         return false;
 	}
 
+    public void setTastedBananaSausageDone(GameObject bananaSausage)
+    {
+        if (!tastedBananaSausage)
+        {
+            tastedBananaSausage = true;
+            bananaSausage.GetComponent<BananaSausage>().startPosition = new Vector3(-1.752821f, -4.479155f, -10.33814f);
+            ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
+        }
+    }
+
 	public void setAttackedColleagueDone() {
 		attackedColleague = true;
         
 	}
 
 	public void setAnsweredPhoneCallDone() {
+        if (answeredPhoneCall) return;
 		answeredPhoneCall = true;
         contactAlien = true;
         checklist.checkListItem(ChecklistController.ALIEN_QUEST);
@@ -165,22 +179,26 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setFixedBugDone() {
-		fixedBug = true;
+        if (!fixedBug)
+		    fixedBug = true;
 	}
 
     public void setOpenedBreadPackDone()
     {
-        openedBreadPack = true;
+        if (!openedBreadPack)
+            openedBreadPack = true;
     }
 
     public void setCleanedCoffeeStainDone()
     {
+        if (cleanedCoffeeStain) return;
         cleanedCoffeeStain = true;
         ToolTipController.instance.setToolTip("Jetzt ist es mit Kaffee vollgesogen");
     }
 
     public void setDuelStarted()
     {
+        if (duelStarted) return;
         duelStarted = true;
         duelResetTimer = duelResetTime;
 		ToolTipController.instance.setToolTip("Er wirft nach mir - Ich muss mich wehren");
@@ -188,7 +206,7 @@ public class GameManager : MonoBehaviour {
 
     public bool setThrownPaperDone()
     {
-        if (duelStarted && drunkCoffee && trashedOrc)
+        if (duelStarted && drunkCoffee && trashedOrc && !thrownPaper)
         {
 			ToolTipController.instance.setToolTip("Nimm das!");
             thrownPaper = true;
@@ -196,6 +214,7 @@ public class GameManager : MonoBehaviour {
 			{
 				winPvp = true;
 				checklist.checkListItem(ChecklistController.PVP_QUEST);
+                ToolTipController.instance.setToolTip("Erstes PvP gewonnen", false);
 			}
             
             return true;
@@ -207,7 +226,7 @@ public class GameManager : MonoBehaviour {
 
     public bool setThrownBananaSausageDone()
     {
-        if (duelStarted)
+        if (duelStarted && !thrownBananaSausage)
         {
 			ToolTipController.instance.setToolTip("Fang!");
             thrownBananaSausage = true;
@@ -215,6 +234,7 @@ public class GameManager : MonoBehaviour {
 			{
             	winPvp = true;
             	checklist.checkListItem(ChecklistController.PVP_QUEST);
+                ToolTipController.instance.setToolTip("Erstes PvP gewonnen", false);
 			}
             return true;
         }

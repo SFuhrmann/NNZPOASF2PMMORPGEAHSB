@@ -26,10 +26,11 @@ public class _ObjBreadPackController : ObjController {
         {
 			openBox.Play ();
             openPack = true;
-			this.GetComponent<SpriteRenderer>().sprite = openSprite;
-			ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
-            chocolate.SetActive(true);
+            this.GetComponent<SpriteRenderer>().sprite = openSprite;
+            ToolTipController.instance.setToolTip("Was gibt's denn heute?");
             bananaSausage.SetActive(true);
+
+            chocolate.SetActive(true);
         }
     }
 

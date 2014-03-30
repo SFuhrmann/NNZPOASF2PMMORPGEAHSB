@@ -17,6 +17,11 @@ public class _ObjLaptopScreenController : ObjController {
     {
         bgmEpic = GameObject.Find("MusicLoop").GetComponent<AudioSource>();
         bgmWimpy = GameObject.Find("WimpyLoop").GetComponent<AudioSource>();
+        if (Camera.main.GetComponent<CameraScript>().zoomingIN)
+        {
+            Camera.main.GetComponent<CameraScript>().zoomingIN = false;
+            fadeTimer = fadeTime;
+        }
     }
 
 	// Update is called once per frame
@@ -28,10 +33,6 @@ public class _ObjLaptopScreenController : ObjController {
                 fadeTimer -= Time.deltaTime;
                 bgmEpic.volume = fadeTimer / fadeTime;
                 bgmWimpy.volume = 1 - (fadeTimer / fadeTime);
-                Color newCol = cover.color;
-                newCol.a = fadeTimer / fadeTime;
-                cover.color = newCol;
-
             }
         }
         else
@@ -41,21 +42,14 @@ public class _ObjLaptopScreenController : ObjController {
                 fadeTimer -= Time.deltaTime;
                 bgmEpic.volume = 1 - (fadeTimer / fadeTime);
                 bgmWimpy.volume = fadeTimer / fadeTime;
-                Color newCol = cover.color;
-                newCol.a = 1 - (fadeTimer / fadeTime);
-                cover.color = newCol;
             }
         }
 	}
 
     void OnMouseDown()
     {
-        if (Camera.main.GetComponent<CameraScript>().zoomingIN)
-        {
-            Camera.main.GetComponent<CameraScript>().zoomingIN = false;
-            fadeTimer = fadeTime;
-        }
-        else
+        
+        if (!Camera.main.GetComponent<CameraScript>().zoomingIN)
             GameManager.instance.setUnhideDesktopNinjaDone();
     }
 }

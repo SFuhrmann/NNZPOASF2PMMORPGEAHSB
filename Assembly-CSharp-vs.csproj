@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ColliderStartController.cs" />
+     <Compile Include="Assets\objects\scripts\AchievementController.cs" />
      <Compile Include="Assets\objects\scripts\BananaSausage.cs" />
      <Compile Include="Assets\objects\scripts\BreastMenuItem.cs" />
      <Compile Include="Assets\objects\scripts\BugController.cs" />

@@ -31,11 +31,16 @@ public class ToolTipController : MonoBehaviour {
             {
                 cooldownIsRunning = false;
 				instanceToolTip = "";
-				archieveBG.SetActive(false);
 				hintBG.SetActive(false);
 			}
 		}
 	}
+
+    public void resetAchievement()
+    {
+        instanceToolTip = "";
+        archieveBG.SetActive(false);
+    }
 
     /*void OnGUI()
     {
@@ -49,12 +54,10 @@ public class ToolTipController : MonoBehaviour {
     }*/
 
 	public void setToolTip(string toolTip, bool hint = true) {
-		if (hint == false) {
+		if (!hint) {
 			this.hint = false;
 			achieveText.text = toolTip;
             //print(achieveText.text);
-			cooldownTime = 2f;			
-			cooldownIsRunning = true;
 			hintBG.SetActive(false);
 			archieveBG.SetActive(true);
             GetComponent<AudioSource>().Play();
