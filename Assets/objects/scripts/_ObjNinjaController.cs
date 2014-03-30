@@ -15,6 +15,7 @@ public class _ObjNinjaController : ObjController {
 
     void OnTriggerStay2D(Collider2D col)
     {
+		if (Camera.main.GetComponent<CameraScript>().zoomingIN) return;
         if (dragging || !draggingReady) return;
         if (col.CompareTag("Bin"))
         {

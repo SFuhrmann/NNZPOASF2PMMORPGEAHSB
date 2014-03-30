@@ -1,19 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\objects\scripts\_ObjBreadPackController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\objects\scripts\_ExitController.cs">
     <Files>
+      <File FileName="Assets\objects\scripts\GameManager.cs" Line="69" Column="24" />
+      <File FileName="Assets\objects\scripts\_ObjLaptopScreenController.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\_ObjNotebookController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\GameManager.cs" Line="196" Column="5" />
       <File FileName="Assets\objects\scripts\ObjController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\_ObjLaptopScreenController.cs" Line="17" Column="60" />
-      <File FileName="Assets\objects\scripts\ToolTipController.cs" Line="65" Column="20" />
+      <File FileName="Assets\objects\scripts\ToolTipController.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\BananaSausage.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\_ObjPhoneController.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\ChecklistController.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\QuestLogNearControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\BugController.cs" Line="24" Column="50" />
-      <File FileName="Assets\objects\scripts\_ObjPaperController.cs" Line="27" Column="36" />
-      <File FileName="Assets\objects\scripts\_ObjBreadPackController.cs" Line="29" Column="60" />
+      <File FileName="Assets\objects\scripts\BugController.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\_ObjPaperController.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\_ObjBreadPackController.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\_ObjNinjaController.cs" Line="1" Column="1" />
+      <File FileName="Assets\objects\scripts\_ExitController.cs" Line="16" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

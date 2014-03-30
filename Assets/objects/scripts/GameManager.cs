@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
     public bool pvpWon = false;
     public float duelResetTimer;
     public float duelResetTime = 15;
+	public bool escapecheck = false;
 
     public bool healZombie, killNazi, findStash, huntOrc, getNinja, contactAlien, winPvp, lookAtBreasts;
 
@@ -52,11 +53,24 @@ public class GameManager : MonoBehaviour {
         }
         CheckAllBools();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Camera.main.GetComponent<CameraScript>().zoomingIN = true;
-            screen.fadeTimer = screen.fadeTime;
-        }
+
+		if (!escapecheck) {
+	        if (Input.GetKeyDown(KeyCode.Escape))
+	        {
+	            Camera.main.GetComponent<CameraScript>().zoomingIN = true;
+	            screen.fadeTimer = screen.fadeTime;
+				escapecheck = true;
+
+	        }
+		} else {
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				Camera.main.GetComponent<CameraScript>().zoomingIN = false;
+				screen.fadeTimer = screen.fadeTime;
+				escapecheck = false;
+				
+			}
+		}
     }
 
     void CheckAllBools()

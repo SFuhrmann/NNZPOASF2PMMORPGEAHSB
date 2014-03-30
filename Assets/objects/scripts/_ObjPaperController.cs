@@ -30,10 +30,10 @@ public class _ObjPaperController : ObjController {
         }
         else if (col.CompareTag("OrcBooger"))
         {
-			polish.Play ();
-			this.GetComponent<SpriteRenderer>().sprite = orcish;
             if (GameManager.instance.setTrashedOrcDone())
             {
+				polish.Play ();
+				this.GetComponent<SpriteRenderer>().sprite = orcish;
                 Destroy(col.gameObject);
             }
         }

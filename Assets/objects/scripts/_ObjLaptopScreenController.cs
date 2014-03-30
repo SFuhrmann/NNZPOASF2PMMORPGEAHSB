@@ -8,6 +8,7 @@ public class _ObjLaptopScreenController : ObjController {
     public float fadeTime = 1.0f;
     public SpriteRenderer cover;
 
+
     // Use this for initialization
 	void Start () {
 	    
@@ -39,6 +40,7 @@ public class _ObjLaptopScreenController : ObjController {
         {
             if (fadeTimer > 0)
             {
+
                 fadeTimer -= Time.deltaTime;
                 bgmEpic.volume = 1 - (fadeTimer / fadeTime);
                 bgmWimpy.volume = fadeTimer / fadeTime;
