@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\objects\scripts\_ExitController.cs">
     <Files>
       <File FileName="Assets\objects\scripts\GameManager.cs" Line="69" Column="24" />
@@ -16,7 +16,8 @@
       <File FileName="Assets\objects\scripts\_ObjBreadPackController.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\objects\scripts\_ObjNinjaController.cs" Line="1" Column="1" />
-      <File FileName="Assets\objects\scripts\_ExitController.cs" Line="16" Column="3" />
+      <File FileName="Assets\objects\scripts\_ExitController.cs" Line="19" Column="1" />
+      <File FileName="Assets\objects\scripts\_playController.cs" Line="17" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
