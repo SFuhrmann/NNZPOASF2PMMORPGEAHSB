@@ -37,7 +37,8 @@ public class ChecklistController : MonoBehaviour {
     void OnMouseDown()
     {
         questlogNear.SetActive(true);
-		openSound.Play ();
-
+        
+        openSound.Play();
+        gameObject.SetActive(false);
     }
 }

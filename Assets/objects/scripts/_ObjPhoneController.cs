@@ -6,8 +6,8 @@ public class _ObjPhoneController : ObjController {
     public GameObject[] dialDummy;
     public Sprite nonPressedSprite;
     public Sprite[] pressedDownSprites;
+    bool playedAlienSound;
     public SpriteRenderer phoneSprite;
-    public AudioSource bgm;
     private int[] lastDialedNumbers = new int[3];
     private float pressedTimer = 0;
     public float pressedTime = 0.5f;
@@ -52,12 +52,11 @@ public class _ObjPhoneController : ObjController {
         lastDialedNumbers[1] = lastDialedNumbers[0];
         lastDialedNumbers[0] = i;
         print(lastDialedNumbers[0] + " " + lastDialedNumbers[1] + " " + lastDialedNumbers[2]);
-        if (lastDialedNumbers[0] == 6 && lastDialedNumbers[1] == 6 && lastDialedNumbers[2] == 6)
+        if (!playedAlienSound && lastDialedNumbers[0] == 6 && lastDialedNumbers[1] == 6 && lastDialedNumbers[2] == 6)
         {
             GameManager.instance.setAnsweredPhoneCallDone();
+            playedAlienSound = true;
             GetComponent<AudioSource>().Play();
-            bgm.volume = 0;
-            Invoke("resetBGMVolume", GetComponent<AudioSource>().clip.length - 1);
         }
         
         pressedTimer = pressedTime;
@@ -65,6 +64,6 @@ public class _ObjPhoneController : ObjController {
 
     public void resetBGMVolume()
     {
-        bgm.volume = 1;
+
     }
 }

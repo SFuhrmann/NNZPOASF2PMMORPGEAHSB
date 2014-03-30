@@ -3,6 +3,7 @@ using System.Collections;
 
 public class QuestLogNearControl : MonoBehaviour {
 	public AudioSource close;
+    public GameObject checklistSmall;
 	// Use this for initialization
 	void Start () {
 
@@ -18,5 +19,6 @@ public class QuestLogNearControl : MonoBehaviour {
     {
 		close.Play ();
         gameObject.SetActive(false);
+        checklistSmall.SetActive(true);
     }
 }

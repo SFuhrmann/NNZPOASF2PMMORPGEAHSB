@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour {
         if (!tastedBananaSausage)
         {
             tastedBananaSausage = true;
-            bananaSausage.GetComponent<BananaSausage>().startPosition = new Vector3(-1.752821f, -4.479155f, -10.33814f);
+            bananaSausage.GetComponent<BananaSausage>().startPosition = new Vector3(-1.752821f, -4.479155f, 1.941799f);
             ToolTipController.instance.setToolTip("Uäh schon wieder Bananen-Wurst-Brot");
         }
     }
